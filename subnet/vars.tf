@@ -5,6 +5,7 @@ variable "private_subnet_cidrs" {
 
 variable "vpc_id" {
   description = "The VPC ID in which this subnet will be created."
+  default     = [[""]]
 }
 
 variable "azs" {
@@ -13,5 +14,7 @@ variable "azs" {
 }
 
 variable "tags" {
+  type        = map(string)
+  default     = {}
   description = "to define tags for the subnet"
 }
