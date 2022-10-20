@@ -4,9 +4,8 @@ variable "private_subnet_cidrs" {
 }
 
 variable "vpc_id" {
-  type = list(string)
+  type = string
   description = "The VPC ID in which this subnet will be created."
-  default     = []
 }
 
 variable "azs" {
