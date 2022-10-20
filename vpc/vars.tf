@@ -10,7 +10,6 @@ variable "instance_tenancy" {
 }
 
 variable "cidr_block" {
-    type = number
     description = "to defin the CIDR range for IPAM"
     default = [[""]]
 }
