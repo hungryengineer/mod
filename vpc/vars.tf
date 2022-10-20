@@ -1,5 +1,6 @@
 variable "tags" {
-    type = string
+    type        = map(string)
+    default     = {}
     description = "to define tags for the VPC"
 }
 
