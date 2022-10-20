@@ -14,15 +14,15 @@ variable "cidr_block" {
     description = "to defin the CIDR range for IPAM"
 }
 
-variable "ipv4_ipam_pool_id" {
-    type = number
-    description = "the ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. IPAM is a VPC feature that you can use to automate your IPAM"
-}
+# variable "ipv4_ipam_pool_id" {
+#     type = number
+#     description = "the ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR. IPAM is a VPC feature that you can use to automate your IPAM"
+# }
 
-variable "ipv4_netmask_length" {
-    type = number
-    description = "The netmask length of the IPv4 CIDR you want to allocate to this VPC. Requires specifying a ipv4_ipam_pool_id"
-}
+# variable "ipv4_netmask_length" {
+#     type = number
+#     description = "The netmask length of the IPv4 CIDR you want to allocate to this VPC. Requires specifying a ipv4_ipam_pool_id"
+# }
 
 variable "enable_dns_support" {
     type = bool
