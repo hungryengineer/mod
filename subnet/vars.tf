@@ -4,7 +4,6 @@ variable "private_subnet_cidrs" {
 }
 
 variable "vpc_id" {
-  type = number
   description = "The VPC ID in which this subnet will be created."
 }
 
