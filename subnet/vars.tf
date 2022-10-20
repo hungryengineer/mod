@@ -1,5 +1,5 @@
 variable "private_subnet_cidrs" {
-  type = list(string)
+  #type = list(string)
   description = "The IPv4 CIDR block for the subnet."
 }
 
@@ -9,6 +9,6 @@ variable "vpc_id" {
 }
 
 variable "azs" {
- type        = list(string)
+ #type        = list(string)
  description = "Availability Zones"
 }
