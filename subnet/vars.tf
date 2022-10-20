@@ -1,5 +1,5 @@
 variable "private_subnet_cidrs" {
-  default = [[""]]
+  type = list(string)
   description = "The IPv4 CIDR block for the subnet."
 }
 
@@ -11,5 +11,4 @@ variable "vpc_id" {
 variable "azs" {
  type        = list(string)
  description = "Availability Zones"
- default     = ["ap-northeast-1",]
 }
