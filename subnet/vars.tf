@@ -12,3 +12,7 @@ variable "azs" {
  #type        = list(string)
  description = "Availability Zones"
 }
+
+variable "tags" {
+  description = "to define tags for the subnet"
+}
