@@ -4,7 +4,7 @@ resource "aws_route" "main" {
   destination_cidr_block = var.destination_cidr_block
   #gateway_id             = var.gateway_id
 
-  timeouts {
-    create = "5m"
-  }
+#   timeouts {
+#     create = "5m"
+#   }
 }
