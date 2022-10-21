@@ -1,4 +1,4 @@
-variable "private_subnet_cidrs" {
+variable "subnet_cidrs" {
   #type = list(string)
   description = "The IPv4 CIDR block for the subnet."
 }
