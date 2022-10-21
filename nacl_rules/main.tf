@@ -1,11 +1,11 @@
 resource "aws_network_acl_rule" "main" {
-  #count          = length(var.acl_rules)
-  network_acl_id = var.network_acl_id
+  count          = length(var.network_acl_id)
+  network_acl_id = element(var.network_acl_id, count.index)
   rule_number    = var.rule_number
   egress         = var.egress 
   protocol       = var.protocol
   rule_action    = var.rule_action
-  cidr_block     = var.cidr_block
+  cidr_block     = element(var.cidr_block, count.index)
   from_port      = var.from_port
   to_port        = var.to_port
 }
