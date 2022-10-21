@@ -3,5 +3,5 @@ output "route_id" {
 }
 
 output "route_state" {
-    value = aws_route.main.state
+    value = aws_route.main[*].state
 }
