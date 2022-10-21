@@ -1,7 +1,6 @@
 resource "aws_network_acl" "main" {
-  count = length(var.subnet_ids)
   vpc_id = var.vpc_id
-  subnet_ids = element(var.subnet_ids, count.index)
+  subnet_ids = var.subnet_ids
 
 #   egress {
 #     protocol   = "tcp"
