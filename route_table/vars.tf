@@ -1,6 +1,6 @@
-# variable "subnets" {
+variable "subnet_cidrs" {
   
-# }
+}
 
 variable "vpc_id" {
   
