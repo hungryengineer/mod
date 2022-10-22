@@ -3,6 +3,9 @@ variable "subnet_cidrs" {
   description = "The IPv4 CIDR block for the subnet."
 }
 
+variable "name" {
+  description = "subnet names"
+}
 variable "vpc_id" {
   type = any
   description = "The VPC ID in which this subnet will be created."
