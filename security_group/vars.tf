@@ -13,3 +13,7 @@ variable "security_group_ingress" {
 variable "security_group_egress" {
   
 }
+
+variable "tags" {
+  
+}
