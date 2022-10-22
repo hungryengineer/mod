@@ -6,11 +6,11 @@ resource "aws_security_group" "main" {
     for_each = var.security_group_ingress
     content {
 
-      cidr_blocks      = compact(split(",", lookup(ingress.value, "cidr_blocks", "")))
-      description      = lookup(ingress.value, "description", null)
-      from_port        = lookup(ingress.value, "from_port", 0)
-      to_port          = lookup(ingress.value, "to_port", 0)
-      protocol         = lookup(ingress.value, "protocol", "-1")
+      cidr_blocks      = ingress.value.cidr_blocks #compact(split(",", lookup(ingress.value, "cidr_blocks", "")))
+      description      = ingress.value.description #lookup(ingress.value, "description", null)
+      from_port        = ingress.value.from_port #lookup(ingress.value, "from_port", 0)
+      to_port          = ingress.value.to_port #lookup(ingress.value, "to_port", 0)
+      protocol         = ingress.value.protocol #lookup(ingress.value, "protocol", "-1")
     }
   }
 
@@ -18,11 +18,11 @@ resource "aws_security_group" "main" {
     for_each = var.security_group_egress
     content {
       
-      cidr_blocks      = compact(split(",", lookup(egress.value, "cidr_blocks", "")))
-      description      = lookup(egress.value, "description", null)
-      from_port        = lookup(egress.value, "from_port", 0)
-      to_port          = lookup(egress.value, "to_port", 0)
-      protocol         = lookup(egress.value, "protocol", "-1")
+      cidr_blocks      = ingress.value.cidr_blocks #compact(split(",", lookup(egress.value, "cidr_blocks", "")))
+      description      = ingress.value.description #lookup(egress.value, "description", null)
+      from_port        = ingress.value.from_port #lookup(egress.value, "from_port", 0)
+      to_port          = ingress.value.to_port #lookup(egress.value, "to_port", 0)
+      protocol         = ingress.value.protocol #lookup(egress.value, "protocol", "-1")
     }
   }
 
