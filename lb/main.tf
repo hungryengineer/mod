@@ -15,6 +15,5 @@ resource "aws_lb" "main" {
 #         prefix = access_logs.value.prefix
 #     }
 #   }
-   tags = merge(
-    { "Name" = var.name }, var.tags, var.lb_tags,)
+   tags = var.tags
 }
