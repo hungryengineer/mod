@@ -38,6 +38,6 @@ variable "tags" {
   
 }
 
-variable "lb_tags" {
+# variable "lb_tags" {
   
-}
+# }
