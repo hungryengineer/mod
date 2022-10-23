@@ -16,5 +16,5 @@ resource "aws_lb" "main" {
 #     }
 #   }
    tags = merge(
-    { "Name" = var.name }, var.tags, var.vpc_tags,)
+    { "Name" = var.name }, var.tags, var.lb_tags,)
 }
