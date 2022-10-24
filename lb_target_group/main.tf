@@ -12,13 +12,13 @@ resource "aws_lb_target_group" "main" {
      content {
       enabled             = try(health_check.value.enabled, null)
       interval            = try(health_check.value.interval, null)
-      #path                = try(health_check.value.path, null)
+      path                = try(health_check.value.path, null)
       port                = try(health_check.value.port, null)
       healthy_threshold   = try(health_check.value.healthy_threshold, null)
       unhealthy_threshold = try(health_check.value.unhealthy_threshold, null)
       timeout             = try(health_check.value.timeout, null)
       protocol            = try(health_check.value.protocol, null)
-      #matcher             = try(health_check.value.matcher, null)
+      matcher             = try(health_check.value.matcher, null)
     }
   }
 
