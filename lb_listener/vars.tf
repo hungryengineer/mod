@@ -17,6 +17,10 @@ variable "protocol" {
 variable "default_action" {
   
 }
+
+variable "target_group_arn" {
+  
+}
 variable "fixed_response" {
   
 }
