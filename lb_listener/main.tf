@@ -29,9 +29,9 @@ resource "aws_lb_listener" "frontend_http_tcp" {
         for_each = var.fixed_response != null ? [var.fixed_response] : []
 
         content {
-          content_type = fixed_response.value.content_type
+          content_type = try(fixed_response.value.content_type, null)
           message_body = try(fixed_response.value.message_body, null)
-          status_code  = fixed_response.value.status_code
+          status_code  = try(fixed_response.value.status_code, null)
         }
       }
     }
