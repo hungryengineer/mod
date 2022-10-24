@@ -14,10 +14,6 @@ variable "protocol" {
   
 }
 
-variable "target_group_arn" {
-  
-}
-
 variable "fixed_response" {
   
 }
