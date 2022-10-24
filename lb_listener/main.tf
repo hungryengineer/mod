@@ -5,7 +5,7 @@ resource "aws_lb_listener" "frontend_http_tcp" {
   protocol = var.protocol
 
   dynamic "default_action" {
-    for_each = var.default_action != null ? [var.default_action] : []
+    for_each = var.default_action != null ? [1] : []
 
     # Defaults to forward action if action_type not specified
     content {
