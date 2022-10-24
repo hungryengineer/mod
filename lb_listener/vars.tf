@@ -18,6 +18,9 @@ variable "default_action" {
   
 }
 
+variable "type" {
+  
+}
 variable "target_group_arn" {
   
 }
