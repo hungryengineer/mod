@@ -4,12 +4,15 @@ resource "aws_lb_listener" "frontend_http_tcp" {
   port     = var.port
   protocol = var.protocol
 
-  default_action {
+  dynamic "default_action" {
+    for_each = var.default_action != null ? [var.default_action] : []
+
     # Defaults to forward action if action_type not specified
-      type             = default_action.value.type
-      target_group_arn = default_action.value.target_group_arn
+    content {
+      type             = try(default_action.value.type, null)
+      target_group_arn = try(default_action.value.target_group_arn, null)
+    }
   }
-  
     #   dynamic "redirect" {
     #     for_each = var.redirect != null ? [var.redirect] : []
 
