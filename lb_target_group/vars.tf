@@ -22,9 +22,9 @@ variable "vpc_id" {
   
 }
 
-variable "load_balancing_algorithm_type" {
+# variable "load_balancing_algorithm_type" {
   
-}
+# }
 
 variable "ip_address_type" {
   
