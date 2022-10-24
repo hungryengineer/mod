@@ -26,7 +26,7 @@ resource "aws_lb_target_group" "main" {
     for_each = var.stickiness != null ? [var.stickiness] : []
     content {
      enabled         = try(stickiness.value.enabled, true)
-     type            = stickiness.value.type
+     type            = try(stickiness.value.type, null)
     }
   }
 }
