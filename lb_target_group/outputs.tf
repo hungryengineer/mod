@@ -1,15 +1,15 @@
 output "lb_target_group_name" {
-    value = aws_lb_target_group.main.name
+    value = aws_lb_target_group.main[*].name
 }
 
 output "lb_target_group_arn" {
-    value = aws_lb_target_group.main.arn
+    value = aws_lb_target_group.main[*].arn
 }
 
 output "lb_target_group_id" {
-    value = aws_lb_target_group.main.id
+    value = aws_lb_target_group.main[*].id
 }
 
 output "lb_target_group_arn_suffix" {
-    value = aws_lb_target_group.main.arn_suffix
+    value = aws_lb_target_group.main[*].arn_suffix
 }
