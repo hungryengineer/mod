@@ -6,7 +6,6 @@ resource "aws_lb_target_group" "main" {
   target_type = var.target_type
   vpc_id      = var.vpc_id
   load_balancing_algorithm_type = var.load_balancing_algorithm_type
-  ip_address_type = var.ip_address_type
   
   dynamic health_check {
     for_each = var.health_check != null ? [var.health_check] : []
