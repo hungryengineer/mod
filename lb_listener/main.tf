@@ -10,7 +10,7 @@ resource "aws_lb_listener" "frontend_http_tcp" {
     # Defaults to forward action if action_type not specified
     content {
       type             = "forward"
-      target_group_arn = try(default_action.value.target_group_arn, null)
+      target_group_arn = module.lb_target_group[0].lb_target_group_arn
     }
   }
     #   dynamic "redirect" {
