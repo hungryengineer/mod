@@ -28,8 +28,6 @@ resource "aws_lb_target_group" "main" {
     content {
      enabled         = try(stickiness.value.enabled, true)
      type            = stickiness.value.type
-     cookie_name     = try(stickiness.value.cookie_name, null)
-     cookie_duration = try(stickiness.value.cookie_duration, null)
     }
   }
 }
