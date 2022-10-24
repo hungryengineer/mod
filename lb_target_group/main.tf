@@ -18,7 +18,7 @@ resource "aws_lb_target_group" "main" {
       unhealthy_threshold = try(health_check.value.unhealthy_threshold, null)
       timeout             = try(health_check.value.timeout, null)
       protocol            = try(health_check.value.protocol, null)
-      matcher             = try(health_check.value.matcher, null)
+      #matcher             = try(health_check.value.matcher, null)
     }
   }
 
