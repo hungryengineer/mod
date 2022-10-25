@@ -1,4 +1,4 @@
-variable "aws_lb_listener_rule" {
+variable "create_lb_listener" {
   
 }
 

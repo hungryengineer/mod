@@ -1,5 +1,5 @@
 resource "aws_lb_listener_rule" "host_based_routing" {
-  count = var.aws_lb_listener_rule != null ? [var.aws_lb_listener_rule] : []
+  count = var.create_lb_listener ? 1 : 0
   listener_arn = var.listener_arn
   priority     = var.priority
   
