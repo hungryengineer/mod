@@ -16,7 +16,8 @@ resource "aws_lb_listener_rule" "host_based_routing" {
     #       content {
     #         arn    = var.target_group_arn
     #         weight = try(target_group.value.weight, null)
-    
+    }
+    }
         
         dynamic "stickiness" {
            for_each = var.rule_stickiness != null ? [var.rule_stickiness] : []
@@ -25,8 +26,8 @@ resource "aws_lb_listener_rule" "host_based_routing" {
               duration        = try(stickiness.value.duration, null)
           }
         }
-      }
-    }
+      
+    
 
 
    # Path Pattern condition
