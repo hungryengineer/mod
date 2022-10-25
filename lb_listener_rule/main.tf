@@ -16,14 +16,14 @@ resource "aws_lb_listener_rule" "host_based_routing" {
     #       content {
     #         arn    = var.target_group_arn
     #         weight = try(target_group.value.weight, null)
-    }
-    }
+    #   }
+    # }
         
-        dynamic "stickiness" {
-           for_each = var.rule_stickiness != null ? [var.rule_stickiness] : []
-           content {
-              enabled         = try(stickiness.value.enabled, true)
-              duration        = try(stickiness.value.duration, null)
+    #     dynamic "stickiness" {
+    #        for_each = var.rule_stickiness != null ? [var.rule_stickiness] : []
+    #        content {
+    #           enabled         = try(stickiness.value.enabled, true)
+    #           duration        = try(stickiness.value.duration, null)
           }
         }
       

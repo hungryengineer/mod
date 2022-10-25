@@ -18,9 +18,9 @@ variable "target_group_arn" {
   
 }
 
-variable "rule_stickiness" {
+# variable "rule_stickiness" {
   
-}
+# }
 
 variable "condition" {
   
