@@ -17,9 +17,9 @@ variable "protocol" {
 variable "default_action" {
   
 }
-# variable "fixed_response" {
+variable "fixed_response" {
   
-# }
+}
 
 variable "type" {
   
