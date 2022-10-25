@@ -18,11 +18,11 @@ variable "target_group" {
   
 }
 
-variable "arn" {
+variable "target_group_arn" {
   
 }
 
-variable "stickiness" {
+variable "rule_stickiness" {
   
 }
 

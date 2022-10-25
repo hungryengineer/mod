@@ -13,15 +13,15 @@ resource "aws_lb_listener_rule" "host_based_routing" {
           for_each = var.target_group != null ? [var.target_group] : []
 
           content {
-            arn    = var.arn
+            arn    = var.target_group_arn
             weight = try(target_group.value.weight, null)
           }
         }
         dynamic "stickiness" {
-           for_each = var.stickiness != null ? [var.stickiness] : []
+           for_each = var.rule_stickiness != null ? [var.rule_stickiness] : []
            content {
               enabled         = try(stickiness.value.enabled, true)
-              type            = try(stickiness.value.type, null)
+              duration        = try(stickiness.value.duration, null)
           }
         }
       }
@@ -34,7 +34,7 @@ resource "aws_lb_listener_rule" "host_based_routing" {
 
     content {
       path_pattern {
-        values = condition.value["path_patterns"]
+        values = condition.value.path_pattern.values
       }
     }
   }
