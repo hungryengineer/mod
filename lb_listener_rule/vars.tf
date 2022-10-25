@@ -14,10 +14,6 @@ variable "action" {
   
 }
 
-variable "target_group" {
-  
-}
-
 variable "target_group_arn" {
   
 }
