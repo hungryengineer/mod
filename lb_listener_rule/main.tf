@@ -9,7 +9,6 @@ resource "aws_lb_listener_rule" "host_based_routing" {
     content {
       type = try(action.value.type, null)
       target_group_arn = var.target_group_arn
-      
     # USE BELOW BLOCK TO ROUTE A %AGE OF TRAFFIC BETWEEN TWO TARGET GROUPS
     #   forward { 
     #     dynamic "target_group" {
@@ -28,7 +27,7 @@ resource "aws_lb_listener_rule" "host_based_routing" {
         }
       }
     }
-  }
+
 
    # Path Pattern condition
   dynamic "condition" {
@@ -50,6 +49,6 @@ resource "aws_lb_listener_rule" "host_based_routing" {
 #         values = condition.value["host_headers"]
 #       }
 #     }
-#   }
+  }
 
 
