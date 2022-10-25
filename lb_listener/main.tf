@@ -11,8 +11,7 @@ resource "aws_lb_listener" "frontend_http_tcp" {
     content {
       type             = var.type
       target_group_arn = var.target_group_arn
-    }
-  }
+    
     #   dynamic "redirect" {
     #     for_each = var.redirect != null ? [var.redirect] : []
 
@@ -23,8 +22,8 @@ resource "aws_lb_listener" "frontend_http_tcp" {
     #       protocol    = try(redirect.value.protocol, null)
     #       query       = try(redirect.value.query, null)
     #       status_code = try(redirect.value["status_code"])
-    #     }
-    #   }
+    #   
+    # 
 
       dynamic "fixed_response" {
         for_each = var.fixed_response != null ? [var.fixed_response] : []
@@ -34,6 +33,8 @@ resource "aws_lb_listener" "frontend_http_tcp" {
           status_code  = try(fixed_response.value.status_code, null)
         }
       }
+  }
+}
 
   tags = var.tags
 }
