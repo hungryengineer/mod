@@ -22,13 +22,13 @@ variable "versioning_enabled" {
   
 }
 
-variable "rule" {
+# variable "rule" {
   
-}
+# }
 
-variable "cors_rule" {
+# variable "cors_rule" {
   
-}
+# }
 
 variable "tiering" {
   

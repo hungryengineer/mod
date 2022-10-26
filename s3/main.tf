@@ -42,31 +42,31 @@ resource "aws_s3_bucket" "main" {
   versioning_configuration {
     enabled = var.versioning_enabled
   }
-  server_side_encryption_configuration {
-    dynamic rule {
-        for_each = var.rule
-        content {
-          dynamic apply_server_side_encryption_by_default {
-            for_each = rule.value.apply_server_side_encryption_by_default
-            content {
-              sse_algorithm  = apply_server_side_encryption_by_default.value.sse_algorithm
-        }
-      }
-    }
-  }
- }
-  dynamic "cors_rule" {
-    for_each = var.cors_rules
+#   server_side_encryption_configuration {
+#     dynamic rule {
+#         for_each = var.rule
+#         content {
+#           dynamic apply_server_side_encryption_by_default {
+#             for_each = rule.value.apply_server_side_encryption_by_default
+#             content {
+#               sse_algorithm  = apply_server_side_encryption_by_default.value.sse_algorithm
+#         }
+#       }
+#     }
+#   }
+#  }
+#   dynamic "cors_rule" {
+#     for_each = var.cors_rules
 
-    content {
-      id              = try(cors_rule.value.id, null)
-      allowed_methods = cors_rule.value.allowed_methods
-      allowed_origins = cors_rule.value.allowed_origins
-      allowed_headers = try(cors_rule.value.allowed_headers, null)
-      expose_headers  = try(cors_rule.value.expose_headers, null)
-      max_age_seconds = try(cors_rule.value.max_age_seconds, null)
-    }
-  }
+#     content {
+#       id              = try(cors_rule.value.id, null)
+#       allowed_methods = cors_rule.value.allowed_methods
+#       allowed_origins = cors_rule.value.allowed_origins
+#       allowed_headers = try(cors_rule.value.allowed_headers, null)
+#       expose_headers  = try(cors_rule.value.expose_headers, null)
+#       max_age_seconds = try(cors_rule.value.max_age_seconds, null)
+#     }
+#   }
  
    dynamic "tiering" {
     for_each = var.tiering
