@@ -39,9 +39,9 @@ resource "aws_s3_bucket" "main" {
 #     }
 #   }
 
-  versioning_configuration {
-    enabled = var.versioning_enabled
-  }
+#   versioning_configuration {
+#     enabled = var.versioning_enabled
+#   }
 #   server_side_encryption_configuration {
 #     dynamic rule {
 #         for_each = var.rule
@@ -68,13 +68,13 @@ resource "aws_s3_bucket" "main" {
 #     }
 #   }
  
-   dynamic "tiering" {
-    for_each = var.tiering
+#    dynamic "tiering" {
+#     for_each = var.tiering
 
-    content {
-      access_tier = tiering.value.access_tier
-      days        = tiering.value.days
-    }
-  }
+#     content {
+#       access_tier = tiering.value.access_tier
+#       days        = tiering.value.days
+#     }
+#   }
   tags = var.tags
 }

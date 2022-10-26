@@ -18,9 +18,9 @@ variable "days" {
   
 }
 
-variable "versioning_enabled" {
+# variable "versioning_enabled" {
   
-}
+# }
 
 # variable "rule" {
   
@@ -30,9 +30,9 @@ variable "versioning_enabled" {
   
 # }
 
-variable "tiering" {
+# variable "tiering" {
   
-}
+# }
 
 variable "tags" {
   
