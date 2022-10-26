@@ -10,6 +10,6 @@ variable "tags" {
   
 }
 
-variable "subnet_cidrs" {
+variable "create_network_acl" {
   
 }

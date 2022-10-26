@@ -1,5 +1,5 @@
 resource "aws_network_acl" "main" {
-  count = length(var.subnet_cidrs)
+  count = var.create_network_acl ? 1 : 0
   vpc_id = var.vpc_id
   subnet_ids = var.subnet_ids
 
