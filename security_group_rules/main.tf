@@ -6,7 +6,7 @@
 # Doing so will cause a conflict of rule settings and will overwrite rules.
 
 resource "aws_security_group_rule" "rules" {
-  count = length(var.rules) !=null ? [var.rules]: []
+  count = length(var.rules)
   type              = var.type
   from_port         = var.from_port
   to_port           = var.to_port
