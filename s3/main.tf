@@ -39,9 +39,9 @@ resource "aws_s3_bucket" "main" {
 #     }
 #   }
 
-#   versioning_configuration {
-#     enabled = var.versioning_enabled
-#   }
+  versioning {
+    enabled = var.versioning
+  }
 #   server_side_encryption_configuration {
 #     dynamic rule {
 #         for_each = var.rule

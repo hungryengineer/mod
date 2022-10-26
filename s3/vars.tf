@@ -18,9 +18,9 @@ variable "days" {
   
 }
 
-# variable "versioning_enabled" {
+variable "versioning" {
   
-# }
+}
 
 # variable "rule" {
   
