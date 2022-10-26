@@ -7,10 +7,10 @@
 
 resource "aws_security_group_rule" "rules" {
   count = length(var.rules)
-  type              = var.type
-  from_port         = var.from_port
-  to_port           = var.to_port
-  protocol          = var.protocol
+  type              = element(var.type, count.index)
+  from_port         = element(var.from_port, count.index)
+  to_port           = element(var.to_port, count.index)
+  protocol          = element(var.protocol, count.index)
   cidr_blocks       = var.cidr_blocks
   security_group_id = var.security_group_id
 }
