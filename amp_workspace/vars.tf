@@ -10,9 +10,9 @@ variable "alias" {
   
 # }
 
-variable "log_group_arn" {
+# variable "log_group_arn" {
 
-}
+# }
 
 # variable "tags" {
   
