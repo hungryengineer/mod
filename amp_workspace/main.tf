@@ -8,5 +8,5 @@ resource "aws_prometheus_workspace" "main" {
 #   }
 # }
 
-  tags = var.tags
+  #tags = var.tags
 }

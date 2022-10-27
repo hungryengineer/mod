@@ -14,6 +14,6 @@ variable "alias" {
 
 # }
 
-variable "tags" {
+# variable "tags" {
   
-}
+# }
