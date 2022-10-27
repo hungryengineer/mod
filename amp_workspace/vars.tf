@@ -6,9 +6,9 @@ variable "alias" {
   
 }
 
-variable "logging_configuration" {
+# variable "logging_configuration" {
   
-}
+# }
 
 variable "log_group_arn" {
 
