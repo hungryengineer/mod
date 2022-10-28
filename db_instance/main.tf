@@ -11,7 +11,7 @@ resource "aws_db_instance" "main" {
 #   kms_key_id        = var.kms_key_id
 #   license_model     = var.license_model
 
-  db_name                             = var.db_name
+#   db_name                             = var.db_name
   username                            = var.username
   password                            = var.password
   port                                = var.port
@@ -58,7 +58,7 @@ resource "aws_db_instance" "main" {
 
     content {
       restore_time                             = lookup(restore_to_point_in_time.value, "restore_time", null)
-      source_db_instance_automated_backups_arn = lookup(restore_to_point_in_time.value, "source_db_instance_automated_backups_arn", null)
+    #   source_db_instance_automated_backups_arn = lookup(restore_to_point_in_time.value, "source_db_instance_automated_backups_arn", null)
       source_db_instance_identifier            = lookup(restore_to_point_in_time.value, "source_db_instance_identifier", null)
       source_dbi_resource_id                   = lookup(restore_to_point_in_time.value, "source_dbi_resource_id", null)
       use_latest_restorable_time               = lookup(restore_to_point_in_time.value, "use_latest_restorable_time", null)
