@@ -25,7 +25,7 @@ resource "aws_db_instance" "main" {
 #   option_group_name      = var.option_group_name
 #   network_type           = var.network_type
 
-  availability_zone   = var.availability_zone
+  availability_zone   = element(var.availability_zone, count.index)
   multi_az            = var.multi_az
 #   iops                = var.iops
   publicly_accessible = var.publicly_accessible
