@@ -42,9 +42,9 @@ variable "port" {
   
 }
 
-variable "network_type" {
+# variable "network_type" {
   
-}
+# }
 
 variable "availability_zone" {
   
