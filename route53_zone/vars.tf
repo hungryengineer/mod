@@ -6,6 +6,6 @@ variable "name" {
   
 }
 
-variable "vpc" {
+variable "vpc_id" {
   
 }
