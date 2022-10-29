@@ -8,4 +8,7 @@ resource "aws_route53_zone" "primary" {
         #vpc_region = vpc.value.vpc_region
     }
   }
+  lifecycle {
+    ignore_changes = [vpc]
+  }
 }
