@@ -9,7 +9,7 @@ resource "aws_route53_record" "main" {
     for_each = length(var.weighted_routing_policy) == 0 ? [] : [true]
 
     content {
-      weight = each.value.weighted_routing_policy.weight
+      weight = try(weighted_routing_policy.value.weight, null)
     }
   }
 
