@@ -1,3 +1,7 @@
+variable "create_records" {
+  
+}
+
 variable "records" {
   
 }
