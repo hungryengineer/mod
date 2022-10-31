@@ -6,7 +6,7 @@ resource "aws_route53_record" "main" {
   ttl     = var.ttl
   records = element(var.records, count.index)
   dynamic "weighted_routing_policy" {
-    for_each = length(var.weighted_routing_policy) == 0 ? [] : [true]
+    for_each = length(var.weighted_routing_policy) == 0 ? [] : [var.weighted_routing_policy]
 
     content {
       weight = weighted_routing_policy.value.weight
