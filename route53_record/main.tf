@@ -1,5 +1,5 @@
 resource "aws_route53_record" "main" {
-  count   = length(var.records) 
+  count   = var.create_records ? 1 : 0 
   zone_id = var.zone_id
   name    = var.name
   type    = var.type
