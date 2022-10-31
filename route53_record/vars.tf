@@ -22,6 +22,10 @@ variable "ttl" {
   
 }
 
+variable "set_identifier" {
+  
+}
+
 variable "weighted_routing_policy" {
   
 }
