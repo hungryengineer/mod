@@ -1,6 +1,6 @@
-variable "create_records" {
+# variable "create_records" {
   
-}
+# }
 
 variable "records" {
   
