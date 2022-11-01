@@ -1,5 +1,5 @@
 resource "aws_route53_health_check" "primary" {
-  count             = create_health_check ? 1 : 0
+  count             = var.create_health_check ? 1 : 0
   fqdn              = var.fqdn
   port              = var.port
   type              = var.type
