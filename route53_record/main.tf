@@ -2,7 +2,7 @@ resource "aws_route53_record" "main" {
   count   = length(var.records) > 0 ? 1 : 0 
   zone_id = var.zone_id
   name    = var.name
-  type    = var.type
+  type    = element(var.type, count.index)
   ttl     = var.ttl
   records = element(var.records, count.index)
   set_identifier = element(var.set_identifier, count.index)
