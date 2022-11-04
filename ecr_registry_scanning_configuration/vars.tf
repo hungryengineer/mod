@@ -6,7 +6,7 @@ variable "registry_scan_type" {
   
 }
 
-variable "registry_scan_rule" {
+variable "rule" {
   
 }
 
