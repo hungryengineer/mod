@@ -7,10 +7,10 @@ resource "aws_ecr_registry_scanning_configuration" "main" {
     for_each = var.rule != null ? [rule] : []
     content {
         scan_frequency    = try(rule.value.scan_frequency, null)
-        repository_filter {
-            filter      = try(rule.value.filter, null)
-            filter_type = try(rule.value.filter_type, null)
-        }
+        # repository_filter {
+        #     filter      = try(rule.value.filter, null)
+        #     filter_type = try(rule.value.filter_type, null)
+        # }
     }
   }
 }
