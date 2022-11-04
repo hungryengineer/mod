@@ -8,7 +8,7 @@ resource "aws_ecr_repository" "main" {
     # kms_key         = var.repository_kms_key
   }
 
-  force_delete = var.repository_force_delete
+#   force_delete = var.repository_force_delete
 
   image_scanning_configuration {
     scan_on_push = var.repository_image_scan_on_push

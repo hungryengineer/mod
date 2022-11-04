@@ -14,9 +14,9 @@ variable "repository_encryption_type" {
   
 }
 
-variable "repository_force_delete" {
+# variable "repository_force_delete" {
   
-}
+# }
 
 variable "repository_image_scan_on_push" {
   
