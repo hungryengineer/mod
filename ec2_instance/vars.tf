@@ -47,9 +47,9 @@ variable "vpc_security_group_ids" {
   
 }
 
-variable "key_name" {
+# variable "key_name" {
   
-}
+# }
 
 variable "monitoring" {
   
@@ -59,9 +59,9 @@ variable "associate_public_ip_address" {
   
 }
 
-variable "private_ip" {
+# variable "private_ip" {
   
-}
+# }
 
 variable "ebs_optimized" {
   
@@ -75,17 +75,20 @@ variable "ebs_optimized" {
   
 # }
 
-variable "ebs_block_device" {
+# variable "ebs_block_device" {
   
-}
+# }
 
 variable "network_interface" {
   
 }
 
-variable "launch_template" {
+variable "network_interface_id" {
   
 }
+# variable "launch_template" {
+  
+# }
 
 variable "enclave_options" {
   

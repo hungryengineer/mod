@@ -15,11 +15,11 @@ resource "aws_instance" "main" {
   subnet_id              = var.subnet_id
   vpc_security_group_ids = var.vpc_security_group_ids
 
-  key_name               = var.key_name
+#   key_name               = var.key_name
   monitoring             = var.monitoring
 
   associate_public_ip_address = var.associate_public_ip_address
-  private_ip                  = var.private_ip
+#   private_ip                  = var.private_ip
 #   secondary_private_ips       = var.secondary_private_ips
 #   ipv6_address_count          = var.ipv6_address_count
 #   ipv6_addresses              = var.ipv6_addresses
@@ -73,10 +73,10 @@ resource "aws_instance" "main" {
 #   }
 
   dynamic "network_interface" {
-    for_each = var.network_interface
+    for_each = var.network_interface 
     content {
       device_index          = network_interface.value.device_index
-      network_interface_id  = try(network_interface.value.network_interface_id, null)
+      network_interface_id  = var.network_interface_id
       delete_on_termination = try(network_interface.value.delete_on_termination, false)
     }
   }
