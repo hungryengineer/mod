@@ -90,9 +90,9 @@ variable "network_interface_id" {
   
 # }
 
-variable "enclave_options" {
+# variable "enclave_options" {
   
-}
+# }
 
 variable "source_dest_check" {
   description = "Controls if traffic is routed to the instance when the destination address does not match the instance. Used for NAT or VPNs. Defaults true"
