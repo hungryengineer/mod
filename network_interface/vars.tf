@@ -14,9 +14,9 @@ variable "security_groups" {
   
 }
 
-variable "attachment" {
+# variable "attachment" {
   
-}
+# }
 
 variable "tags" {
   

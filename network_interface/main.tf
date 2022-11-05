@@ -4,12 +4,12 @@ resource "aws_network_interface" "main" {
   private_ips     = var.private_ips
   security_groups = var.security_groups
 
-  dynamic attachment {
-    for_each = var.attachment != null ? [var.attachment] : []
-    content {
-        instance = attachment.value.instance
-        device_index = attachment.value.device_index
-    }
-  }
+  # dynamic attachment {
+  #   for_each = var.attachment != null ? [var.attachment] : []
+  #   content {
+  #       instance = attachment.value.instance
+  #       device_index = attachment.value.device_index
+  #   }
+  # }
   tags = var.tags
 }
