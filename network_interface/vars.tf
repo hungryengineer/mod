@@ -6,9 +6,9 @@ variable "subnet_id" {
   
 }
 
-variable "private_ips" {
+# variable "private_ips" {
   
-}
+# }
 
 variable "security_groups" {
   
