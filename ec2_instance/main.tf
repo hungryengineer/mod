@@ -11,8 +11,8 @@ resource "aws_instance" "main" {
 #   user_data_base64            = var.user_data_base64
 #   user_data_replace_on_change = var.user_data_replace_on_change
 
-  availability_zone      = var.availability_zone
-  subnet_id              = var.subnet_id
+  availability_zone      = element(var.availability_zone, count.index)
+  subnet_id              = element(var.subnet_id, count.index)
   vpc_security_group_ids = var.vpc_security_group_ids
 
 #   key_name               = var.key_name
@@ -76,7 +76,7 @@ resource "aws_instance" "main" {
     for_each = var.network_interface 
     content {
       device_index          = network_interface.value.device_index
-      network_interface_id  = var.network_interface_id
+      network_interface_id  = element(var.network_interface_id, count.index)
       delete_on_termination = try(network_interface.value.delete_on_termination, false)
     }
   }
