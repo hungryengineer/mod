@@ -83,6 +83,13 @@ variable "network_interface" {
   
 }
 
+variable "device_index" {
+  
+}
+
+variable "delete_on_termination" {
+  
+}
 variable "network_interface_id" {
   
 }

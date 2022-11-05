@@ -75,9 +75,9 @@ resource "aws_instance" "main" {
   dynamic "network_interface" {
     for_each = var.network_interface 
     content {
-      device_index          = network_interface.value.device_index
+      device_index          = element(var.device_index, count.index)
       network_interface_id  = element(var.network_interface_id, count.index)
-      delete_on_termination = try(network_interface.value.delete_on_termination, false)
+      delete_on_termination = var.delete_on_termination
     }
   }
 
