@@ -102,10 +102,6 @@ variable "disable_api_termination" {
   
 }
 
-variable "disable_api_stop" {
-  
-}
-
 variable "instance_initiated_shutdown_behavior" {
   
 }
