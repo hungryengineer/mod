@@ -1,7 +1,3 @@
-variable "instance_name" {
-  
-}
-
 variable "create_instance" {
   
 }
