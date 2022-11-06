@@ -1,6 +1,6 @@
 resource "aws_instance" "main" {
   count = var.create_instance ? 1 : 0
-  
+
   ami                  = var.ami
   instance_type        = var.instance_type
 #   cpu_core_count       = var.cpu_core_count
@@ -15,7 +15,7 @@ resource "aws_instance" "main" {
   subnet_id              = element(var.subnet_id, count.index)
   vpc_security_group_ids = var.vpc_security_group_ids
 
-#   key_name               = var.key_name
+  key_name               = var.key_name
   monitoring             = var.monitoring
 
   associate_public_ip_address = var.associate_public_ip_address
