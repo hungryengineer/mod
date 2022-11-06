@@ -1,6 +1,6 @@
 resource "aws_instance" "main" {
   count = var.create_instance ? 1 : 0
-
+  instance_name = var.instance_name
   ami                  = var.ami
   instance_type        = var.instance_type
 #   cpu_core_count       = var.cpu_core_count
